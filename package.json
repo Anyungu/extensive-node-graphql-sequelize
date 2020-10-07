@@ -1,0 +1,23 @@
+{
+  "name": "extensive-node-graphql-sequelize",
+  "version": "1.0.0",
+  "description": "Using Graphql and SQL in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anyungu/extensive-node-graphql-sequelize.git"
+  },
+  "author": "Anyungu C.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anyungu/extensive-node-graphql-sequelize/issues"
+  },
+  "homepage": "https://github.com/Anyungu/extensive-node-graphql-sequelize#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.18.2",
+    "express": "^4.17.1"
+  }
+}
