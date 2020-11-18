@@ -4,9 +4,9 @@ const require = createRequire(import.meta.url);
 const { ApolloServer } = require('apollo-server-express');
 const express = require('express');
 
+
 import { typeDefs } from './api/index.mjs';
 import { resolvers } from './api/index.mjs';
-
 
 
 const app = express();
@@ -19,5 +19,5 @@ const server = new ApolloServer({ typeDefs, resolvers });
 server.applyMiddleware({ app, path: PATH });
 
 app.listen({ port: process.env.PORT || PORT }, () =>
-    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+    console.log(`🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`)
 );

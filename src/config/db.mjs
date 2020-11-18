@@ -1,26 +1,52 @@
 
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
+export const dev = {
 
-const { Sequelize } = require('sequelize');
-
-
-import { } from '.candidate.model.mjs'
-
-
-// sequelize instance
-var sequelizeInstance = new Sequelize('database', 'username', 'password', {
-    host: 'localhost',
-    dialect: 'sqlite',
-
+    HOST: "localhost",
+    USER: "username",
+    PASSWORD: 'password',
+    DB: "database",
+    dialect: "sqlite",
     pool: {
-        max: 50,
+        max: 5,
         min: 0,
+        acquire: 30000,
         idle: 10000
     },
+    storage: 'api/sqlite/database.sqlite'
 
-    // SQLite only
-    storage: '../sqlite/database.sqlite'
-});
+}
 
 
+
+export const stage = {
+
+    HOST: "localhost",
+    USER: "root",
+    PASSWORD: "123456",
+    DB: "testdb",
+    dialect: "mysql",
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    }
+
+}
+
+
+export const prod = {
+
+    HOST: "localhost",
+    USER: "root",
+    PASSWORD: "123456",
+    DB: "testdb",
+    dialect: "mysql",
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    }
+
+}

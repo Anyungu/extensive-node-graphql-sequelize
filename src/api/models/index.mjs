@@ -6,18 +6,35 @@ const { Sequelize } = require('sequelize');
 
 
 import { define_candidate } from './candidate.model.mjs'
+import { dev, stage, prod } from '../../config/db.mjs'
+
+
+const env = process.env.NODE_ENV_LOL
+
+
+var current_env
+
+var current_env_sync = () => {
+
+    console.log(env)
+    if (env === 'dev') {
+        current_env = dev
+    } else if (env === 'stage') {
+        current_env = stage
+    } else {
+        current_env = prod
+    }
+}
+
+current_env_sync()
 
 
 // sequelize instance
-var sequelizeInstance = new Sequelize('database', 'username', 'password', {
-    host: 'localhost',
-    dialect: 'sqlite',
+var sequelizeInstance = new Sequelize(current_env.DB, current_env.USER, current_env.PASSWORD, {
+    host: current_env.HOST,
+    dialect: current_env.dialect,
 
-    pool: {
-        max: 50,
-        min: 0,
-        idle: 10000
-    },
+    pool: current_env.pool,
 
     // SQLite only
     storage: '../sqlite/database.sqlite'
