@@ -4,7 +4,8 @@
   "description": "Using Graphql and SQL in node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --experimental-modules src/app.mjs"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   "homepage": "https://github.com/Anyungu/extensive-node-graphql-sequelize#readme",
   "dependencies": {
     "apollo-server-express": "^2.18.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0"
   }
 }
